@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T10:02:45.944344+00:00",
+  "title": "Design System: gamecommendo",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Carbon",
+        "canonical": "oklch(0.145 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Raised Carbon",
+        "canonical": "oklch(0.205 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(0.269 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "accent": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(0.269 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(0.985 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "oklch(0.708 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal White",
+        "canonical": "oklch(0.922 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "primary-foreground": {
+        "role": "neutral",
+        "displayName": "Carbon Gray",
+        "canonical": "oklch(0.205 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "score-good": {
+        "role": "neutral",
+        "displayName": "Mid Gray",
+        "canonical": "oklch(0.556 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "score-mixed": {
+        "role": "neutral",
+        "displayName": "Dark Gray",
+        "canonical": "oklch(0.439 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(1 0 0 / 10%)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "ring": {
+        "role": "neutral",
+        "displayName": "Focus Gray",
+        "canonical": "oklch(0.556 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.5 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.86 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "library": {
+        "role": "tertiary",
+        "displayName": "Library Blue",
+        "canonical": "oklch(0.7 0.16 250)",
+        "tonalRamp": [
+          "oklch(0.15 0.16 250)",
+          "oklch(0.26 0.16 250)",
+          "oklch(0.38 0.16 250)",
+          "oklch(0.5 0.16 250)",
+          "oklch(0.62 0.16 250)",
+          "oklch(0.74 0.16 250)",
+          "oklch(0.86 0.16 250)",
+          "oklch(0.95 0.16 250)"
+        ]
+      },
+      "favourite": {
+        "role": "tertiary",
+        "displayName": "Favourite Pink",
+        "canonical": "oklch(0.7 0.28 350)",
+        "tonalRamp": [
+          "oklch(0.15 0.28 350)",
+          "oklch(0.26 0.28 350)",
+          "oklch(0.38 0.28 350)",
+          "oklch(0.5 0.28 350)",
+          "oklch(0.62 0.28 350)",
+          "oklch(0.74 0.28 350)",
+          "oklch(0.86 0.28 350)",
+          "oklch(0.95 0.28 350)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Spotlight Game title. Uppercase, capped at 18ch; steps down for names over 26 characters."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The \"More like {Game}\" heading. Uppercase."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Game names in the rail and on Recommendation cards."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Summaries and explanatory copy, capped at 60ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges and button text. Uppercase, wide tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating",
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "purpose": "shadcn shadow-md on dialogs and the select popup; never on in-flow surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances, fades and cover hover scale."
+      },
+      {
+        "name": "screenshot-crossfade",
+        "value": "opacity 700ms",
+        "purpose": "Active screenshot fades in on top; the outgoing one hides after a 700ms delay."
+      },
+      {
+        "name": "details-enter",
+        "value": "500ms fade + translateY(0.75rem)",
+        "purpose": "Stage details re-enter on every spotlight change."
+      },
+      {
+        "name": "recommendation-stagger",
+        "value": "50ms per item, 500ms each",
+        "purpose": "Recommendation covers cascade in on every spotlight change."
+      },
+      {
+        "name": "spotlight-timer",
+        "value": "7000ms linear",
+        "purpose": "Rail fill; its animationend advances the spotlight. Paused on hover and focus-visible."
+      },
+      {
+        "name": "grid-stagger",
+        "value": "30ms per item, 500ms each",
+        "purpose": "Genre, platform and decade grids replay their entrance on every switch."
+      },
+      {
+        "name": "wordmark-rise",
+        "value": "40ms per letter, 700ms each",
+        "purpose": "Footer wordmark letters rise in once when scrolled into view."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action in a view; the spotlight's View Game link.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">View Game <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2.75rem; padding: 0 1.25rem; background: var(--primary, oklch(0.922 0 0)); color: var(--primary-foreground, oklch(0.205 0 0)); font-family: var(--font-sans), 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; border: 1px solid transparent; border-radius: 0; transition: background-color 150ms, transform 150ms; } .ds-btn-primary:hover { background: color-mix(in oklch, var(--primary, oklch(0.922 0 0)) 80%, transparent); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px color-mix(in oklch, var(--ring, oklch(0.556 0 0)) 30%, transparent); } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Text-only micro-label for release year and genres.",
+      "html": "<span class=\"ds-badges\"><span class=\"ds-badge ds-badge-year\">2015</span><span class=\"ds-badge\">Role-playing</span><span class=\"ds-badge\">Adventure</span></span>",
+      "css": ".ds-badges { display: inline-flex; flex-wrap: wrap; gap: 0.375rem; } .ds-badge { display: inline-flex; align-items: center; font-family: var(--font-sans), 'Space Grotesk', sans-serif; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; color: var(--foreground, oklch(0.985 0 0)); } .ds-badge-year { font-weight: 700; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Score",
+      "kind": "custom",
+      "refersTo": "score",
+      "description": "Rounded IGDB total rating in a square box; ground steps down in lightness by tier.",
+      "html": "<span class=\"ds-score-row\"><span class=\"ds-score\">92</span><span class=\"ds-score ds-score-good\">78</span><span class=\"ds-score ds-score-mixed\">64</span><span class=\"ds-score-count\">5,990 ratings</span></span>",
+      "css": ".ds-score-row { display: inline-flex; align-items: center; gap: 0.625rem; font-family: var(--font-sans), 'Space Grotesk', sans-serif; font-size: 0.875rem; color: var(--muted-foreground, oklch(0.708 0 0)); font-variant-numeric: tabular-nums; } .ds-score { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; background: var(--primary, oklch(0.922 0 0)); color: var(--primary-foreground, oklch(0.205 0 0)); font-size: 1rem; font-weight: 700; } .ds-score-good { background: var(--chart-2, oklch(0.556 0 0)); } .ds-score-mixed { background: var(--chart-3, oklch(0.439 0 0)); }"
+    },
+    {
+      "name": "Spotlight Rail Item",
+      "kind": "nav",
+      "refersTo": "rail-item",
+      "description": "One of six spotlight selectors; the active one carries the timer fill that drives rotation.",
+      "html": "<span class=\"ds-rail\"><button class=\"ds-rail-item ds-rail-item-current\" type=\"button\"><span class=\"ds-rail-cover\"></span><span><span class=\"ds-rail-name\">Grand Theft Auto V</span><span class=\"ds-rail-meta\">2013 \u00b7 Shooter</span></span><span class=\"ds-rail-timer\"><span></span></span></button><button class=\"ds-rail-item\" type=\"button\"><span class=\"ds-rail-cover\"></span><span><span class=\"ds-rail-name\">Portal 2</span><span class=\"ds-rail-meta\">2011 \u00b7 Puzzle</span></span></button></span>",
+      "css": ".ds-rail { display: grid; gap: 0.5rem; width: 17rem; } .ds-rail-item { position: relative; display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; overflow: hidden; text-align: left; border: 0; border-radius: 0; background: var(--card, oklch(0.205 0 0)); color: var(--foreground, oklch(0.985 0 0)); cursor: pointer; transition: background-color 150ms; } .ds-rail-item:hover { background: var(--muted, oklch(0.269 0 0)); } .ds-rail-item:hover .ds-rail-name { color: var(--primary, oklch(0.922 0 0)); } .ds-rail-item:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ring, oklch(0.556 0 0)); } .ds-rail-item-current, .ds-rail-item-current:hover { background: var(--accent, oklch(0.269 0 0)); } .ds-rail-cover { flex: none; width: 3rem; aspect-ratio: 3 / 4; background: var(--muted, oklch(0.269 0 0)); } .ds-rail-name { display: block; font-family: var(--font-heading), 'JetBrains Mono', monospace; font-size: 0.875rem; font-weight: 600; line-height: 1.375; transition: color 150ms; } .ds-rail-meta { display: block; font-family: var(--font-sans), 'Space Grotesk', sans-serif; font-size: 0.75rem; color: var(--muted-foreground, oklch(0.708 0 0)); font-variant-numeric: tabular-nums; } .ds-rail-timer { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; overflow: hidden; background: color-mix(in oklch, var(--foreground, oklch(0.985 0 0)) 10%, transparent); } .ds-rail-timer span { display: block; width: 100%; height: 100%; background: var(--primary, oklch(0.922 0 0)); animation: ds-rail-fill 7000ms linear infinite; } .ds-rail:hover .ds-rail-timer span { animation-play-state: paused; } @keyframes ds-rail-fill { from { transform: translateX(-100%); } } @media (prefers-reduced-motion: reduce) { .ds-rail-timer span { animation: none; } }"
+    },
+    {
+      "name": "Recommendation Card",
+      "kind": "card",
+      "refersTo": "game-cover",
+      "description": "A 3:4 cover with Game name and year \u00b7 genre line; hover thickens the frame and scales the art.",
+      "html": "<a class=\"ds-rec\" href=\"#\"><span class=\"ds-rec-cover\"><span class=\"ds-rec-art\"></span></span><span class=\"ds-rec-name\">Red Dead Redemption 2</span><span class=\"ds-rec-meta\">2018 \u00b7 Adventure</span></a>",
+      "css": ".ds-rec { display: flex; flex-direction: column; gap: 0.5rem; width: 9rem; text-decoration: none; outline: none; color: var(--foreground, oklch(0.985 0 0)); } .ds-rec-cover { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--muted, oklch(0.269 0 0)); box-shadow: 0 0 0 1px color-mix(in oklch, var(--foreground, oklch(0.985 0 0)) 10%, transparent); transition: box-shadow 150ms; } .ds-rec-art { position: absolute; inset: 0; background: linear-gradient(160deg, oklch(0.45 0.12 30), oklch(0.25 0.08 280)); transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-rec:hover .ds-rec-cover, .ds-rec:focus-visible .ds-rec-cover { box-shadow: 0 0 0 2px var(--primary, oklch(0.922 0 0)); } .ds-rec:hover .ds-rec-art { transform: scale(1.05); } .ds-rec-name { font-family: var(--font-heading), 'JetBrains Mono', monospace; font-size: 0.875rem; font-weight: 600; line-height: 1.375; } .ds-rec-meta { margin-top: -0.375rem; font-family: var(--font-sans), 'Space Grotesk', sans-serif; font-size: 0.75rem; color: var(--muted-foreground, oklch(0.708 0 0)); font-variant-numeric: tabular-nums; } @media (prefers-reduced-motion: reduce) { .ds-rec-art { transition: none; } }"
+    },
+    {
+      "name": "Display Title",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Spotlight Game title: uppercase monospace at display scale.",
+      "html": "<h2 class=\"ds-display\">The Witcher 3: Wild Hunt</h2>",
+      "css": ".ds-display { max-width: 18ch; margin: 0; font-family: var(--font-heading), 'JetBrains Mono', monospace; font-size: clamp(2.1rem, 4.8vw, 4.75rem); font-weight: 800; line-height: 0.92; letter-spacing: -0.05em; text-transform: uppercase; text-wrap: balance; color: var(--foreground, oklch(0.985 0 0)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Spec Sheet",
+    "overview": "gamecommendo reads like a technical data sheet for Games. Titles are set in uppercase monospace, every edge is square, and the chrome is pure grayscale with no hue of its own. The interface states facts (year, genres, score, rating count) and gets out of the way; the only color on the page comes from IGDB screenshots and cover art.\n\nThe system is dark only. Someone browses it in the evening on a monitor, so the ground is near-black and the artwork sits on it like a lit panel. Density is moderate: one large stage, a compact rail beside it, a strip of covers below.\n\nWhat makes it more than a sheet is the first screen. The spotlight Game and the Games closest to it in meaning share one stage, so the product's mechanism is shown before any scrolling.",
+    "keyCharacteristics": [
+      "Neutral grayscale chrome with zero chroma; artwork carries all color.",
+      "Uppercase JetBrains Mono for titles, Space Grotesk for everything read.",
+      "Square corners everywhere (0 radius).",
+      "Flat surfaces separated by lightness steps and 1px hairlines, never shadows.",
+      "Wide-tracked uppercase micro-labels for badges and buttons."
+    ],
+    "rules": [
+      {
+        "name": "The Art Is The Color Rule",
+        "body": "No surface, label or state gets a hue. If a region needs color, it gets a screenshot or a cover.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brightness Is Rank Rule",
+        "body": "Lighter means more important: the primary action, the active item and the best score are the brightest things in the chrome. Score tiers step down in lightness, not in hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number a visitor compares (scores, rating counts, years) uses `tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Names Rule",
+        "body": "Anything that is a Game's name is set in JetBrains Mono. Anything that describes it is set in Space Grotesk.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Shadow Rule",
+        "body": "Nothing in the page flow casts a shadow. A surface that needs to stand apart gets a lighter step or a hairline. Shadows belong only to dialogs and popups.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Blue Means Yours Rule",
+        "body": "Library Blue (`library`) marks a Game in the signed-in Member's Library and nothing else: the hairline around its cover, its point on the Map, the check on the Library button. It is never used for links, focus, emphasis or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pink Means Loved Rule",
+        "body": "Favourite Pink (`favourite`) marks a Game the signed-in Member has made a Favourite and nothing else. When a Game is both owned and a Favourite, pink wins: one ring carries one fact, and loving a Game is the stronger one. Errors keep red (`destructive`); pink is never used for them.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** keep the chrome at zero chroma; reach for a lighter or darker neutral step when something must stand out.",
+      "**Do** set Game names in JetBrains Mono and descriptive text in Space Grotesk.",
+      "**Do** keep every corner square.",
+      "**Do** use `tabular-nums` on scores, counts and years.",
+      "**Do** restyle a shadcn primitive with utilities before writing a new element.",
+      "**Do** animate only `opacity` and `transform`, with `cubic-bezier(0.16, 1, 0.3, 1)` for entrances.",
+      "**Do** give every animation a `motion-reduce` fallback."
+    ],
+    "donts": [
+      "**Don't** introduce another accent hue or tint a surface; artwork and the two Member marks are the only color. Library Blue only ever means \"in your Library\"; Favourite Pink only ever means \"a Favourite\".",
+      "**Don't** add shadows to anything in the page flow; only dialogs and popups float.",
+      "**Don't** use the radius scale; nothing in the system is rounded.",
+      "**Don't** add classes or keyframes to `globals.css`; only its variables and imports change.",
+      "**Don't** animate `clip-path` or layout properties on full-bleed imagery; the screenshot change is a crossfade.",
+      "**Don't** put a second filled Signal White button in the same view."
+    ]
+  }
+}
