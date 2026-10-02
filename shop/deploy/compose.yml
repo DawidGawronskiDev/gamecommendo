@@ -30,7 +30,7 @@ services:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       STEAM_API_KEY: ${STEAM_API_KEY}
       BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
-      BETTER_AUTH_URL: https://${SITE_DOMAIN}
+      BETTER_AUTH_URL: ${SITE_URL:-https://${SITE_DOMAIN}}
     depends_on:
       postgres:
         condition: service_healthy
