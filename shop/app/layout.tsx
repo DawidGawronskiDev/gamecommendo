@@ -7,6 +7,7 @@ import { FavouriteStyle } from "@/features/favourite/components/favourite-style"
 import { Footer } from "@/features/footer/components/footer";
 import { Header } from "@/features/header/components/header";
 import { LibraryStyle } from "@/features/library/components/library-style";
+import { PaletteScript } from "@/features/palette/components/palette-script";
 import { cn } from "@/lib/utils";
 
 const jetbrainsMonoHeading = JetBrains_Mono({
@@ -36,6 +37,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         jetbrainsMonoHeading.variable,
       )}
     >
+      <head>
+        <PaletteScript />
+      </head>
       <body className="flex min-h-full flex-col font-sans selection:bg-primary selection:text-primary-foreground">
         <ThemeProvider
           attribute="class"

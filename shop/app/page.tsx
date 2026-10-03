@@ -3,12 +3,14 @@ import { DecadeCatalogSection } from "@/features/catalog/components/decade-catal
 import { GenreCatalogSection } from "@/features/catalog/components/genre-catalog-section";
 import { PlatformCatalogSection } from "@/features/catalog/components/platform-catalog-section";
 import { PopularCatalogSection } from "@/features/catalog/components/popular-catalog-section";
+import { ScoreGapCatalogSection } from "@/features/catalog/components/score-gap-catalog-section";
 import { SpotlightCatalogSection } from "@/features/catalog/components/spotlight-catalog-section";
 import {
   getDecadesWithPopularGames,
   getGenresWithPopularGames,
   getPlatformsWithPopularGames,
   getPopularGames,
+  getScoreGapGames,
   getSpotlightGames,
 } from "@/features/catalog/queries";
 import { getFavouriteGameIds } from "@/features/favourite/queries";
@@ -35,15 +37,23 @@ const getPersonalRecommendations = async () => {
 };
 
 export default async function HomePage() {
-  const [spotlightGames, popularGames, genres, platforms, decades, personal] =
-    await Promise.all([
-      getSpotlightGames(),
-      getPopularGames(),
-      getGenresWithPopularGames(),
-      getPlatformsWithPopularGames(),
-      getDecadesWithPopularGames(),
-      getPersonalRecommendations(),
-    ]);
+  const [
+    spotlightGames,
+    popularGames,
+    scoreGapGames,
+    genres,
+    platforms,
+    decades,
+    personal,
+  ] = await Promise.all([
+    getSpotlightGames(),
+    getPopularGames(),
+    getScoreGapGames(),
+    getGenresWithPopularGames(),
+    getPlatformsWithPopularGames(),
+    getDecadesWithPopularGames(),
+    getPersonalRecommendations(),
+  ]);
 
   return (
     <>
@@ -55,6 +65,7 @@ export default async function HomePage() {
         />
       )}
       <PopularCatalogSection popularGames={popularGames} />
+      <ScoreGapCatalogSection scoreGapGames={scoreGapGames} />
       <GenreCatalogSection genres={genres} />
       <PlatformCatalogSection platforms={platforms} />
       <DecadeCatalogSection decades={decades} />

@@ -5,6 +5,7 @@ import type {
   getGenresWithPopularGames,
   getPlatformsWithPopularGames,
   getPopularGames,
+  getScoreGapGames,
   getSpotlightGames,
 } from "./queries";
 
@@ -13,6 +14,10 @@ export type SpotlightGame = Awaited<
 >[number];
 
 export type PopularGame = Awaited<ReturnType<typeof getPopularGames>>[number];
+
+export type ScoreGapGames = Awaited<ReturnType<typeof getScoreGapGames>>;
+
+export type ScoreGapGame = ScoreGapGames["playersHigher"][number];
 
 export type GenreWithPopularGames = Awaited<
   ReturnType<typeof getGenresWithPopularGames>

@@ -10,6 +10,9 @@ export const CATALOG_SORTS: { value: CatalogSort; label: string }[] = [
 
 export const CATALOG_MIN_SCORES = [60, 70, 80, 90];
 
+// What a Game needs before its Player Score and Critic Score are compared.
+export const CATALOG_SCORE_GAP_FLOOR = { playerRatings: 100, criticReviews: 5 };
+
 export const CATALOG_FILTER_PARAMS = {
   name: "name",
   genreId: "genre",

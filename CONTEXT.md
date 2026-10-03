@@ -18,6 +18,14 @@ _Avoid_: Hype, visits, reviews
 A Game's combined IGDB rating from users and critics, from 0 to 100. It says how well a Game was received, not how many people rated it.
 _Avoid_: Rating (ambiguous with the number of ratings), review score
 
+**Player Score**:
+A Game's IGDB rating from users alone, from 0 to 100. "Player" here means the people who rated the Game on IGDB, not a Member of the shop.
+_Avoid_: User score, user rating, audience score
+
+**Critic Score**:
+A Game's IGDB rating from critics alone, from 0 to 100. Many Games have none.
+_Avoid_: Aggregated rating, press score, review score
+
 **Ingestion**:
 Loading Games from IGDB into the project's own database. It is the only place that talks to IGDB; everything else reads the stored Games.
 _Avoid_: Sync, import, scrape
@@ -31,6 +39,16 @@ _Avoid_: Store inventory, stock
 **Product**:
 A Game as it appears in the Catalog. One Game is one Product; there are no per-platform editions.
 _Avoid_: SKU, listing, edition
+
+### Appearance
+
+**Palette**:
+A named set of colors the shop can be shown in. Anyone, Member or visitor, picks one for their own view; it changes nothing for anyone else. Every Palette works in both Modes.
+_Avoid_: Theme (a theme is an IGDB trait of a Game), skin, color scheme
+
+**Mode**:
+Whether the shop is shown light or dark. It is chosen separately from the Palette.
+_Avoid_: Theme, dark theme
 
 ### Members
 

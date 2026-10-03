@@ -5,7 +5,11 @@ type GameScoreProps = React.ComponentProps<"span"> & {
 };
 
 const scoreTone = (score: number) =>
-  score >= 85 ? "bg-primary" : score >= 70 ? "bg-chart-2" : "bg-chart-3";
+  score >= 85
+    ? "bg-score-great"
+    : score >= 70
+      ? "bg-score-good"
+      : "bg-score-mixed";
 
 export function GameScore({ rating, className, ...props }: GameScoreProps) {
   const score = Math.round(rating);
@@ -13,7 +17,7 @@ export function GameScore({ rating, className, ...props }: GameScoreProps) {
   return (
     <span
       className={cn(
-        "grid shrink-0 place-items-center font-bold text-primary-foreground tabular-nums",
+        "grid shrink-0 place-items-center font-bold text-score-foreground tabular-nums",
         scoreTone(score),
         className,
       )}

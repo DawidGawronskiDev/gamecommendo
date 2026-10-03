@@ -99,7 +99,7 @@ components:
 
 **Creative North Star: "The Spec Sheet"**
 
-gamecommendo reads like a technical data sheet for Games. Titles are set in uppercase monospace, every edge is square, and the chrome is pure grayscale with no hue of its own. The interface states facts (year, genres, score, rating count) and gets out of the way; the only color on the page comes from IGDB screenshots and cover art.
+gamecommendo reads like a technical data sheet for Games. Titles are set in uppercase monospace, every edge is square, and the chrome is pure grayscale with no hue of its own. The interface states facts (year, genres, score, rating count) and gets out of the way; the only color on the page comes from IGDB screenshots and cover art. That describes the Neutral Palette, which is the default and the one this document specifies. Anyone can pick another Palette for their own view; doing so is their choice, not the shop's.
 
 The system is dark only. Someone browses it in the evening on a monitor, so the ground is near-black and the artwork sits on it like a lit panel. Density is moderate: one large stage, a compact rail beside it, a strip of covers below.
 
@@ -107,7 +107,7 @@ What makes it more than a sheet is the first screen. The spotlight Game and the 
 
 **Key Characteristics:**
 
-- Neutral grayscale chrome with zero chroma; artwork carries all color.
+- Neutral grayscale chrome with zero chroma; artwork carries all color. Other Palettes are opt-in.
 - Uppercase JetBrains Mono for titles, Space Grotesk for everything read.
 - Square corners everywhere (0 radius).
 - Flat surfaces separated by lightness steps and 1px hairlines, never shadows.
@@ -117,9 +117,11 @@ What makes it more than a sheet is the first screen. The spotlight Game and the 
 
 A single neutral ramp from near-black to near-white. All tokens live as shadcn CSS variables in `app/globals.css` under `.dark`; the `dark` class is set on `<html>`. Components use only the semantic utilities.
 
+The other Palettes (Green, Orange, Purple, Amber) are `[data-palette]` blocks in the same file, each with a light and a dark variant. A Palette redefines the shadcn color tokens only: never fonts, radius or shadows, and never `library`, `favourite`, `destructive` or the `score-*` tokens, which carry meaning and stay the same in every Palette. A Palette whose primary sits close to Library Blue or Favourite Pink is left out rather than those two being moved.
+
 ### Primary
 
-- **Signal White** (`primary`): the one primary action, the active rail outline on small screens, the spotlight timer fill, hover state of Game names and cover outlines, scores of 85 and above, and the text selection ground.
+- **Signal White** (`primary`): the one primary action, the active rail outline on small screens, the spotlight timer fill, hover state of Game names and cover outlines, and the text selection ground.
 
 ### Neutral
 
@@ -128,8 +130,9 @@ A single neutral ramp from near-black to near-white. All tokens live as shadcn C
 - **Graphite** (`muted`, `accent`): cover placeholders, hovered rail items, the active rail item.
 - **Paper** (`foreground`): titles and body text.
 - **Ash** (`muted-foreground`): meta lines, rating counts, secondary copy.
-- **Mid Gray** (`score-good`, shadcn `chart-2`): scores from 70 to 84.
-- **Dark Gray** (`score-mixed`, shadcn `chart-3`): scores below 70.
+- **Signal White** (`score-great`): scores of 85 and above, with `score-foreground` text.
+- **Mid Gray** (`score-good`): scores from 70 to 84.
+- **Dark Gray** (`score-mixed`): scores below 70.
 - **Hairline** (`border`): 10% white, used as rings at `foreground/10`. Game covers take theirs from `--game-ring`, which defaults to the same hairline.
 
 ### Tertiary
@@ -262,6 +265,10 @@ Sticky bar on Carbon with a hairline bottom. Wordmark at left in JetBrains Mono,
 
 A ruled list of the ten most popular Games, one link per row: two-digit rank in JetBrains Mono (Paper for ranks 1 to 3, Ash after), small cover, name and meta, rating count with a "ratings" label, score box. Rows are separated by hairlines and take Raised Carbon on hover.
 
+### Players vs critics
+
+Directly under the popular list. Two ruled lists of ten side by side from `lg`, stacked below: "Players rate higher" and "Critics rate higher", ranked by the gap between Player Score and Critic Score. A row is the rank in Ash JetBrains Mono, a small cover, the name, a meta line (year, player rating count, critic review count), and under them a track: a hairline from 0 to 100 with a filled 10px square at the Player Score, a hollow one at the Critic Score, a 2px Paper bar between them, and each number printed outside its mark. The two marks differ by shape, never by color; a legend above the lists names them once. Marks and bar take `primary` on row hover. Only Games with at least 100 player ratings and 5 critic reviews are compared, and the section says so.
+
 ### Toggles
 
 Three sections switch their grid by one choice, each with its own control:
@@ -315,6 +322,12 @@ The third profile view, beside Library and Favourites. A ruled summary row first
 ### Footer
 
 Hairline top, then a large uppercase statement ("Nothing here is for sale") with one supporting line, two columns of text links, a ruled row of small Ash notes, and the wordmark set across the full container width in JetBrains Mono. The wordmark's letters rise in one by one (40ms steps, 700ms) the first time it scrolls into view.
+
+### Design page
+
+`/design` shows the system and is where a Palette is picked; a palette icon in the header and a footer link lead to it. A display-scale title, one line and anchor links open the page. Under them the Palette picker sits in a ruled bar: a radio group of 3rem square swatches with the palette icon and a one-line note at left. Each swatch is drawn in its own Palette: "Aa" in that Palette's `foreground` on its `background`, over a band of its `primary`, with the name as a micro-label beneath. The chosen swatch takes a 2px Paper outline at 2px offset and its label turns Paper; swatches lift 2px on hover. Once scrolled past, the bar sticks under the header in a compact form: 2.5rem swatches, no labels, no note.
+
+Five ruled sections follow, each a 16rem column holding the headline and a short description, with the specimens beside it from `lg`. Colors and Meaning are ruled lists of tokens: a 2.75rem chip, the token name in JetBrains Mono, its role in Ash, and its live value as hex at right. Colors lists what a Palette redefines; Meaning lists what none does, with the three Score tiers shown as bare boxes. Type sets each role in real shop copy. Controls holds the working primitives. Games shows three real Games with the ring forced to plain, Library Blue and Favourite Pink, labelled as specimens.
 
 ## Do's and Don'ts
 

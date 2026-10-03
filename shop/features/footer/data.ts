@@ -1,12 +1,14 @@
 export const browseLinks = [
   { name: "Spotlight", href: "/" },
   { name: "Most popular", href: "/#popular-games-heading" },
+  { name: "Players vs critics", href: "/#score-gap-games-heading" },
   { name: "By genre", href: "/#genre-games-heading" },
   { name: "By platform", href: "/#platform-games-heading" },
   { name: "By decade", href: "/#decade-games-heading" },
   { name: "Browse all", href: "/browse" },
   { name: "Blend", href: "/blend" },
   { name: "Map", href: "/map" },
+  { name: "Design", href: "/design" },
 ];
 
 export const sourceLinks = [{ name: "IGDB", href: "https://www.igdb.com" }];

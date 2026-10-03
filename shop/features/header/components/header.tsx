@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
 import { AuthMenu } from "@/features/auth/components/auth-menu";
 import { cn } from "@/lib/utils";
+import { PaletteIcon } from "@phosphor-icons/react/dist/ssr";
 import { RecommendationQueryCommand } from "@/features/recommendation/components/recommendation-query-command";
 
 type HeaderProps = React.ComponentProps<"header">;
@@ -44,6 +46,16 @@ export function Header({ className, ...props }: HeaderProps) {
           </Link>
         </nav>
         <RecommendationQueryCommand />
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          aria-label="Design and Palette"
+          className="shrink-0"
+          render={<Link href="/design" />}
+          nativeButton={false}
+        >
+          <PaletteIcon />
+        </Button>
         <ModeToggle />
         <AuthMenu />
       </div>

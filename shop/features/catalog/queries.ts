@@ -24,6 +24,7 @@ import {
 import { getDismissedGameIds } from "@/features/dismissal/queries";
 import { getGamesByIds } from "@/features/game/queries";
 import { getRecommendedGames } from "@/features/recommendation/queries";
+import { CATALOG_SCORE_GAP_FLOOR } from "./data";
 import { CatalogFilters } from "./types";
 
 export const getSpotlightGames = async () => {
@@ -60,6 +61,61 @@ export const getPopularGames = async () => {
       genres: true,
     },
   });
+};
+
+export const getScoreGapGames = async () => {
+  const gap = sql`${gamesTable.rating} - ${gamesTable.aggregatedRating}`;
+
+  // A Score built on a handful of ratings makes the biggest gaps and means the least.
+  const pick = async (order: ReturnType<typeof desc>) => {
+    const games = await db
+      .select({
+        id: gamesTable.id,
+        name: gamesTable.name,
+        coverUrl: gamesTable.coverUrl,
+        firstReleaseDate: gamesTable.firstReleaseDate,
+        playerScore: gamesTable.rating,
+        playerRatingCount: gamesTable.ratingCount,
+        criticScore: gamesTable.aggregatedRating,
+        criticReviewCount: gamesTable.aggregatedRatingCount,
+      })
+      .from(gamesTable)
+      .where(
+        and(
+          gte(gamesTable.ratingCount, CATALOG_SCORE_GAP_FLOOR.playerRatings),
+          gte(
+            gamesTable.aggregatedRatingCount,
+            CATALOG_SCORE_GAP_FLOOR.criticReviews,
+          ),
+        ),
+      )
+      .orderBy(order)
+      .limit(10);
+
+    return games.flatMap((game) =>
+      game.playerScore != null && game.criticScore != null
+        ? {
+            ...game,
+            playerScore: Math.round(game.playerScore),
+            criticScore: Math.round(game.criticScore),
+          }
+        : [],
+    );
+  };
+
+  const [playersHigher, criticsHigher] = await Promise.all([
+    pick(desc(gap)),
+    pick(asc(gap)),
+  ]);
+
+  return {
+    playersHigher: playersHigher.filter(
+      (game) => game.playerScore > game.criticScore,
+    ),
+    criticsHigher: criticsHigher.filter(
+      (game) => game.criticScore > game.playerScore,
+    ),
+  };
 };
 
 export const getGenresWithPopularGames = async () => {
