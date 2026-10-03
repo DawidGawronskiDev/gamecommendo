@@ -51,7 +51,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <LibraryStyle />
             <FavouriteStyle />
             <Header />
-            {children}
+            <main
+              id="main"
+              tabIndex={-1}
+              className="flex flex-1 flex-col outline-none"
+            >
+              {children}
+            </main>
             <Footer />
           </TooltipProvider>
         </ThemeProvider>

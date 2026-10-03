@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/command";
 import { GameCommandItem } from "@/features/game/components/game-command-item";
 import { cn } from "@/lib/utils";
-import { MagnifyingGlassIcon } from "@phosphor-icons/react";
+import { CursorTextIcon } from "@phosphor-icons/react";
 import { queryGames } from "../queries";
 import { Recommendation } from "../types";
 
@@ -27,24 +27,37 @@ type RecommendationQueryStatus = "idle" | "loading" | "done" | "error";
 
 type RecommendationQueryCommandTriggerProps = React.ComponentProps<"button">;
 
+const subscribeToPlatform = () => () => {};
+const getIsApple = () => /Mac|iPhone|iPad/.test(navigator.platform);
+
 function RecommendationQueryCommandTrigger({
   className,
   ...props
 }: RecommendationQueryCommandTriggerProps) {
+  const isApple = useSyncExternalStore(
+    subscribeToPlatform,
+    getIsApple,
+    () => false,
+  );
+
   return (
     <button
       type="button"
+      aria-haspopup="dialog"
+      aria-keyshortcuts="Control+K Meta+K"
       className={cn(
-        "flex h-9 items-center gap-2 bg-card px-3 text-sm text-muted-foreground ring-1 ring-foreground/10 outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring sm:w-72",
+        "flex h-11 min-w-0 items-center gap-2 bg-card px-2.5 text-xs text-muted-foreground sm:px-3 sm:text-sm ring-1 ring-foreground/50 outline-none transition-colors hover:bg-muted hover:text-foreground hover:ring-foreground focus-visible:ring-2 focus-visible:ring-ring",
         className,
       )}
       {...props}
     >
-      <MagnifyingGlassIcon className="size-4 shrink-0" />
-      <span className="sr-only sm:hidden">Describe a Game</span>
-      <span className="hidden sm:inline">Describe a Game</span>
-      <kbd className="ml-auto hidden font-heading text-[0.625rem] font-semibold tracking-widest uppercase sm:inline">
-        Ctrl K
+      <CursorTextIcon className="hidden size-4 shrink-0 sm:block" />
+      <span className="truncate">Describe a Game</span>
+      <kbd
+        aria-hidden
+        className="ml-auto hidden font-heading text-[0.625rem] font-semibold tracking-widest whitespace-nowrap uppercase lg:inline"
+      >
+        {isApple ? "⌘ K" : "Ctrl K"}
       </kbd>
     </button>
   );
@@ -114,7 +127,13 @@ function RecommendationQueryCommandMessage({
   );
 }
 
-export function RecommendationQueryCommand() {
+type RecommendationQueryCommandProps = {
+  className?: string;
+};
+
+export function RecommendationQueryCommand({
+  className,
+}: RecommendationQueryCommandProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -170,7 +189,11 @@ export function RecommendationQueryCommand() {
 
   return (
     <>
-      <RecommendationQueryCommandTrigger onClick={() => setOpen(true)} />
+      <RecommendationQueryCommandTrigger
+        aria-expanded={open}
+        className={className}
+        onClick={() => setOpen(true)}
+      />
       <CommandDialog
         open={open}
         onOpenChange={setOpen}

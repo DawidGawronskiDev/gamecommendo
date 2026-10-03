@@ -253,11 +253,21 @@ The shared unit for any grid of Games: a 3:4 cover with a hairline ring, the Gam
 
 ### Header
 
-Sticky bar on Carbon with a hairline bottom. Wordmark at left in JetBrains Mono, uppercase, extrabold: `game` in Paper, `commendo` in Ash. At right a "Map" text link in label style and the Query trigger.
+Sticky bar on Carbon with a hairline bottom, 3.5rem tall. Its job is to lead into Recommendations, so the Query trigger is the brightest and widest thing in it.
+
+- **Wordmark** at left in JetBrains Mono, uppercase, extrabold: `game` in Paper, `commendo` in Ash.
+- **Links** from `md`, directly after the wordmark: Browse, Blend, Map in label style at 0.75rem, Ash. Each link is the full height of the bar. The current one turns Paper and sits a 2px Signal White mark on the hairline, and carries `aria-current="page"`.
+- **Query trigger** at right; see Query palette.
+- **Design** from `md`: a palette icon with a tooltip, marked the same way on `/design`.
+- **Account** from `md`: a text link in the same style, "Log in" for a visitor and "Library" for a Member. The session is read on the server, so it never pops in.
+- **Below `md`** the bar is the wordmark, the Query trigger filling the space between, and a 2.75rem menu button. The menu is a sheet from the right edge (20rem, full height) listing Browse, Blend, Map, Design and the account link as 3.5rem ruled rows in JetBrains Mono; the current row is Paper with a small Signal White square at its right.
+- **Mode** is not in the header. It is switched on the Design page, beside the Palette.
+- A "Skip to content" link is the first focusable element and jumps to `<main id="main">`.
+- Every target is at least 2.75rem in both directions, and all of them share one focus style: a 2px `ring`.
 
 ### Query palette
 
-- **Trigger:** looks like a field (Raised Carbon, hairline ring, 18rem wide from `sm`): magnifier, "Describe a Game", and a `Ctrl K` hint.
+- **Trigger:** looks like a field (Raised Carbon, 2.75rem tall, a ring at `foreground/50` so its edge clears 3:1 in both Modes). A text-cursor icon, never a magnifier, because this is not name search; "Describe a Game"; and from `lg` a shortcut hint, `⌘ K` on Apple devices and `Ctrl K` elsewhere. 14rem wide from `md`, 20rem from `lg`, 24rem from `xl`; below `md` it fills the bar and keeps its words.
 - **Dialog:** shadcn `Command` in a dialog, opened by the trigger or Ctrl/Cmd+K. Before typing it lists three example descriptions. Results are the ten closest Games: small cover, name, `year · genre`.
 - **States:** "Matching by meaning…" while loading, previous results dim to 50%; plain sentences for no matches and for failure.
 
@@ -309,7 +319,7 @@ Both marks are set from the Product page and the Map's quick view with two outli
 
 ### Profile
 
-The Member's name at display scale with their email and a Log out button, then the Library: a short explanation beside the Steam ID field and Sync button, a ruled row with the Game count, "See on the Map" and "Clear Library", and the Games as a cover grid (3 across, rising to 8). Above it two small buttons switch between Library and Favourites, each with its count; the filled one is current and the choice lives in the URL. Clearing either opens a confirm dialog with a red-tinted destructive button. The header shows a single user icon, outlined for a visitor and filled for a Member.
+The Member's name at display scale with their email and a Log out button, then the Library: a short explanation beside the Steam ID field and Sync button, a ruled row with the Game count, "See on the Map" and "Clear Library", and the Games as a cover grid (3 across, rising to 8). Above it two small buttons switch between Library and Favourites, each with its count; the filled one is current and the choice lives in the URL. Clearing either opens a confirm dialog with a red-tinted destructive button. The header links to it as "Library".
 
 ### Dismissing
 
@@ -325,7 +335,7 @@ Hairline top, then a large uppercase statement ("Nothing here is for sale") with
 
 ### Design page
 
-`/design` shows the system and is where a Palette is picked; a palette icon in the header and a footer link lead to it. A display-scale title, one line and anchor links open the page. Under them the Palette picker sits in a ruled bar: a radio group of 3rem square swatches with the palette icon and a one-line note at left. Each swatch is drawn in its own Palette: "Aa" in that Palette's `foreground` on its `background`, over a band of its `primary`, with the name as a micro-label beneath. The chosen swatch takes a 2px Paper outline at 2px offset and its label turns Paper; swatches lift 2px on hover. Once scrolled past, the bar sticks under the header in a compact form: 2.5rem swatches, no labels, no note.
+`/design` shows the system and is where a Palette is picked; a palette icon in the header and a footer link lead to it. A display-scale title, one line and anchor links open the page. Under them the Palette picker sits in a ruled bar: a radio group of 3rem square swatches with the palette icon and a one-line note at left. After the swatches, past a hairline, a square of the same size switches the Mode: a moon or sun for the current Mode, with "Dark" or "Light" as its micro-label. Each swatch is drawn in its own Palette: "Aa" in that Palette's `foreground` on its `background`, over a band of its `primary`, with the name as a micro-label beneath. The chosen swatch takes a 2px Paper outline at 2px offset and its label turns Paper; swatches lift 2px on hover. Once scrolled past, the bar sticks under the header in a compact form: 2.5rem swatches, no labels, no note, and the Mode square only from `sm`.
 
 Five ruled sections follow, each a 16rem column holding the headline and a short description, with the specimens beside it from `lg`. Colors and Meaning are ruled lists of tokens: a 2.75rem chip, the token name in JetBrains Mono, its role in Ash, and its live value as hex at right. Colors lists what a Palette redefines; Meaning lists what none does, with the three Score tiers shown as bare boxes. Type sets each role in real shop copy. Controls holds the working primitives. Games shows three real Games with the ring forced to plain, Library Blue and Favourite Pink, labelled as specimens.
 

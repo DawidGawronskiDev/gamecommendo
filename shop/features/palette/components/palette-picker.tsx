@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useSyncExternalStore } from "react";
 
+import { ModeToggle } from "@/components/mode-toggle";
 import { cn } from "@/lib/utils";
 import { PaletteIcon } from "@phosphor-icons/react";
 
@@ -85,50 +86,65 @@ export function PalettePicker({
         </p>
       </div>
       <div
-        role="radiogroup"
-        aria-labelledby="palette-picker-label"
-        className={cn("flex", compact ? "gap-2" : "flex-wrap gap-x-3 gap-y-4")}
+        className={cn(
+          "flex items-start",
+          compact ? "gap-2" : "flex-wrap gap-x-3 gap-y-4",
+        )}
       >
-        {PALETTES.map((item) => (
-          <label
-            key={item.value}
-            className={cn(
-              "group flex cursor-pointer flex-col items-center gap-2",
-              compact ? "w-10" : "w-12",
-            )}
-          >
-            <input
-              type="radio"
-              name="palette"
-              value={item.value}
-              checked={palette === item.value}
-              onChange={() => savePalette(item.value)}
-              className="peer sr-only"
-            />
-            {/* Carrying the attribute makes the swatch resolve that Palette's own tokens. */}
-            <span
-              data-palette={item.value}
-              aria-hidden
+        <div
+          role="radiogroup"
+          aria-labelledby="palette-picker-label"
+          className="contents"
+        >
+          {PALETTES.map((item) => (
+            <label
+              key={item.value}
               className={cn(
-                "flex flex-col bg-background text-foreground outline-offset-2 outline-foreground ring-1 ring-foreground/20 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 peer-checked:outline-2 peer-focus-visible:outline-2 peer-focus-visible:outline-ring motion-reduce:transition-none motion-reduce:group-hover:translate-y-0",
-                compact ? "size-10" : "size-12",
+                "group flex cursor-pointer flex-col items-center gap-2",
+                compact ? "w-10" : "w-12",
               )}
             >
-              <span className="grid flex-1 place-items-center font-heading text-xs leading-none font-extrabold">
-                {!compact && "Aa"}
+              <input
+                type="radio"
+                name="palette"
+                value={item.value}
+                checked={palette === item.value}
+                onChange={() => savePalette(item.value)}
+                className="peer sr-only"
+              />
+              {/* Carrying the attribute makes the swatch resolve that Palette's own tokens. */}
+              <span
+                data-palette={item.value}
+                aria-hidden
+                className={cn(
+                  "flex flex-col bg-background text-foreground outline-offset-2 outline-foreground ring-1 ring-foreground/20 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 peer-checked:outline-2 peer-focus-visible:outline-2 peer-focus-visible:outline-ring motion-reduce:transition-none motion-reduce:group-hover:translate-y-0",
+                  compact ? "size-10" : "size-12",
+                )}
+              >
+                <span className="grid flex-1 place-items-center font-heading text-xs leading-none font-extrabold">
+                  {!compact && "Aa"}
+                </span>
+                <span className={cn("bg-primary", compact ? "h-3" : "h-4")} />
               </span>
-              <span className={cn("bg-primary", compact ? "h-3" : "h-4")} />
-            </span>
-            <span
-              className={cn(
-                "text-[0.625rem] leading-none font-semibold tracking-widest text-muted-foreground uppercase transition-colors group-hover:text-foreground peer-checked:text-foreground",
-                compact && "sr-only",
-              )}
-            >
-              {item.label}
-            </span>
-          </label>
-        ))}
+              <span
+                className={cn(
+                  "text-[0.625rem] leading-none font-semibold tracking-widest text-muted-foreground uppercase transition-colors group-hover:text-foreground peer-checked:text-foreground",
+                  compact && "sr-only",
+                )}
+              >
+                {item.label}
+              </span>
+            </label>
+          ))}
+        </div>
+        <span
+          aria-hidden
+          className={cn("hidden w-px self-stretch bg-foreground/10 sm:block")}
+        />
+        <ModeToggle
+          compact={compact}
+          className={cn(compact && "hidden sm:flex")}
+        />
       </div>
     </div>
   );
