@@ -181,37 +181,19 @@ Three decisions shape the code, each recorded as an ADR in `docs/adr/`:
 
 ### 1. Environment
 
-Two `.env` files are used, and neither is committed.
+Two `.env` files are used, and neither is committed. Copy both examples, then fill them in:
 
-`.env` in the repository root, read by Docker Compose, Ingestion and the notebook:
-
-```ini
-IGDB_CLIENT_ID=
-IGDB_CLIENT_SECRET=
-
-POSTGRES_USER=shop
-POSTGRES_PASSWORD=change-me
-POSTGRES_DB=shop
-
-OPENAI_API_KEY=
+```sh
+cp .env.example .env
+cp shop/.env.example shop/.env
 ```
 
-`shop/.env`, read by the shop and its scripts:
+| File | Read by | Needs |
+| --- | --- | --- |
+| `.env` | Docker Compose, Ingestion, the notebook | IGDB credentials, Postgres user, password and database, OpenAI key |
+| `shop/.env` | The shop and its scripts | `DATABASE_URL`, OpenAI key, Steam key, Better Auth secret and URL |
 
-```ini
-DATABASE_URL=postgres://shop:change-me@localhost:5432/shop
-
-OPENAI_API_KEY=
-STEAM_API_KEY=
-
-# openssl rand -base64 32
-BETTER_AUTH_SECRET=
-BETTER_AUTH_URL=http://localhost:3000
-
-# Optional; these are the defaults.
-# CHROMA_HOST=localhost
-# CHROMA_PORT=8000
-```
+`DATABASE_URL` in `shop/.env` must use the same Postgres user, password and database as `.env`. Generate `BETTER_AUTH_SECRET` with `openssl rand -base64 32`.
 
 ### 2. Postgres and Chroma
 
